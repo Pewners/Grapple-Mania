@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Shooting : MonoBehaviour
 {
@@ -19,10 +20,13 @@ public class Shooting : MonoBehaviour
     public Camera fpsCam;
     public Transform attackPoint;
 
+    public TextMeshProUGUI ammodisplay;
+
     public bool allowInvoke = true;
 
     private void Awake()
     {
+        //makes sure magazine is full
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
@@ -30,17 +34,27 @@ public class Shooting : MonoBehaviour
     private void Update()
     {
         MyInput();
+
+        //set ammo display
+        if (ammodisplay != null)
+        {
+            ammodisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+        }
     }
 
     private void MyInput()
     {
+        //checks if allowed to hold down shoot button
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
+        //reload
         if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
 
+        //automatic reload
         if (readyToShoot && shooting && !reloading && bulletsLeft <= 0) Reload();
 
+        //shooting
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
             bulletsShot = 0;
@@ -53,9 +67,11 @@ public class Shooting : MonoBehaviour
     {
         readyToShoot = false;
 
+        //find the exact hit point using raycase
         Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         RaycastHit hit;
 
+        //checks if ray hits something
         Vector3 targetPoint;
         if (Physics.Raycast(ray, out hit))
         {
