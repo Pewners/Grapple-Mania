@@ -5,6 +5,14 @@ using UnityEngine;
 public class PlayerHit : MonoBehaviour
 {
     public int hits = 5;
+    public GameObject explosion;
+    public AudioSource source;
+    public AudioClip boom;
+
+    private void Start()
+    {
+        explosion.SetActive(false);
+    }
 
     private void OnCollisionEnter(Collision CollisionInfo)
     {
@@ -19,6 +27,8 @@ public class PlayerHit : MonoBehaviour
         if (hits == 0)
         {
             Destroy(gameObject);
+            explosion.SetActive(true);
+            source.PlayOneShot(boom);
         }
     }
 }
