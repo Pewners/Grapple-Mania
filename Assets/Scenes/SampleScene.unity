@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.25330013, g: 0.21698801, b: 0.23319203, a: 1}
+  m_IndirectSpecularColor: {r: 0.25330186, g: 0.21698852, b: 0.2331926, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -996,6 +996,7 @@ GameObject:
   - component: {fileID: 807096994}
   - component: {fileID: 807096995}
   - component: {fileID: 807096996}
+  - component: {fileID: 807096993}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1003,6 +1004,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &807096993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807096992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fc32d2347eef842b7128ab5652de5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 1417667218}
+  playerObj: {fileID: 1125791554}
+  rb: {fileID: 0}
+  maxSlideTime: 0.75
+  slideForce: 200
+  slideTimer: 0
+  slideYScale: 0.5
+  slideKey: 306
 --- !u!4 &807096994
 Transform:
   m_ObjectHideFlags: 0
@@ -1059,7 +1080,7 @@ MonoBehaviour:
   crouchYScale: 0.5
   jumpKey: 32
   sprintKey: 304
-  crouchKey: 306
+  crouchKey: 99
   playerHeight: 2
   groundCheck: {fileID: 130381637}
   groundDistance: 0.4
@@ -1385,8 +1406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214d777a4724e9948bce5481f9eb6e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 100
-  sensY: 100
+  sensX: 1000
+  sensY: 1000
   orientation: {fileID: 1417667218}
 --- !u!1 &986088846
 GameObject:
@@ -1658,7 +1679,7 @@ GameObject:
   - component: {fileID: 1125791556}
   - component: {fileID: 1125791555}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: PlayerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
