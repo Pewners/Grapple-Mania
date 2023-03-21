@@ -22,7 +22,7 @@ public class Sliding : MonoBehaviour
     public KeyCode slideKey = KeyCode.LeftControl;
     private float horizontalInput;
     private float verticalInput;
-    private bool sliding;
+
 
     private void Start()
     {
@@ -40,19 +40,19 @@ public class Sliding : MonoBehaviour
         if (Input.GetKeyDown(slideKey) && (horizontalInput != 0 || verticalInput != 0))
             StartSlide();
 
-        if (Input.GetKeyUp(slideKey) && sliding)
+        if (Input.GetKeyUp(slideKey) && pm.sliding)
             StopSlide();
     }
 
     private void FixedUpdate()
     {
-        if (sliding)
+        if (pm.sliding)
             SlidingMovement();
     }
 
     private void StartSlide()
     {
-        sliding = true;
+        pm.sliding = true;
 
         playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
         rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
@@ -64,9 +64,17 @@ public class Sliding : MonoBehaviour
     {
         Vector3 inputDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.AddForce(inputDirection.normalized * slideForce, ForceMode.Force);
+        if (!pm.OnSlope() || rb.velocity.y > -0.1f)
+        {
+            rb.AddForce(inputDirection.normalized * slideForce, ForceMode.Force);
 
-        slideTimer -= Time.deltaTime;
+            slideTimer -= Time.deltaTime;
+        }
+
+        else
+        {
+            rb.AddForce(pm.GetSlopeMoveDirection(inputDirection) * slideForce, ForceMode.Force);
+        }
 
         if (slideTimer <= 0)
             StopSlide();
@@ -74,7 +82,7 @@ public class Sliding : MonoBehaviour
 
     private void StopSlide()
     {
-        sliding = false;
+        pm.sliding = false;
 
         playerObj.localScale = new Vector3(playerObj.localScale.x, startYScale, playerObj.localScale.z);
     }
