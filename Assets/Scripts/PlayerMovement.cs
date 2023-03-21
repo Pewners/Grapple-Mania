@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed;
     public float groundDrag;
     public float slideSpeed;
+    public float dashSpeed;
 
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
@@ -65,9 +66,12 @@ public class PlayerMovement : MonoBehaviour
         air,
         crouching,
         sliding,
+        dashing,
     }
 
     public bool sliding;
+
+    public bool dashing;
 
     private void Start()
     {
@@ -90,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         // handle drag
-        if (grounded)
+        if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching)
         {
             rb.drag = groundDrag;
         }
@@ -136,6 +140,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
+        // Mode - Dashing
+        if (dashing)
+        {
+            state = MovementState.dashing;
+            moveSpeed = dashSpeed;
+        }
+
         // Mode - Sliding
         if (sliding)
         {
@@ -153,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Mode - Crouching
-        if (Input.GetKey(crouchKey))
+        else if (Input.GetKey(crouchKey))
         {
             state = MovementState.crouching;
             desiredMoveSpeed = crouchSpeed;
