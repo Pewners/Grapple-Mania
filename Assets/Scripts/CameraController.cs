@@ -37,6 +37,13 @@ public class CameraController : MonoBehaviour
 
         // rotate cam and orientation
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, xRotation);
+        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
+
+    //this is the visual effects I'll do this later -jason
+
+    //public void DoFov(float endValue)
+    //{
+    //    GetComponent<Camera>().fieldOfView = endValue;
+    //}
 }

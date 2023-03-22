@@ -11,7 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed;
     public float groundDrag;
     public float slideSpeed;
+
     public float dashSpeed;
+    public float dashSpeedChangeFactor;
+
+    public float maxYspeed;
 
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
@@ -138,13 +142,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private MovementState lastState;
+    private bool keepMomentum;
+
     private void StateHandler()
     {
         // Mode - Dashing
         if (dashing)
         {
             state = MovementState.dashing;
-            moveSpeed = dashSpeed;
+            desiredMoveSpeed = dashSpeed;
+            speedChangeFactor = dashSpeedChangeFactor;
         }
 
         // Mode - Sliding
@@ -188,6 +196,34 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             state = MovementState.air;
+            if (desiredMoveSpeed < sprintSpeed)
+            {
+                desiredMoveSpeed = sprintSpeed;
+            }
+            else
+            {
+                desiredMoveSpeed = sprintSpeed;
+            }
+
+            bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
+            if (lastState == MovementState.dashing) keepMomentum = true;
+
+            if (desiredMoveSpeedHasChanged)
+            {
+                if (keepMomentum)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(SmoothlyLerpMoveSpeed());
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    moveSpeed = desiredMoveSpeed;
+                }
+            }
+
+            lastDesiredMoveSpeed = desiredMoveSpeed;
+            lastState = state;
         }
 
         if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed !=0)
@@ -203,15 +239,21 @@ public class PlayerMovement : MonoBehaviour
         lastDesiredMoveSpeed = desiredMoveSpeed;
     }
 
+    private float speedChangeFactor;
+
     private IEnumerator SmoothlyLerpMoveSpeed()
     {
         float time = 0;
         float difference = Mathf.Abs(desiredMoveSpeed - moveSpeed);
         float startValue = moveSpeed;
 
+        float boostFactor = speedChangeFactor;
+
         while (time < difference)
         {
             moveSpeed = Mathf.Lerp(startValue, desiredMoveSpeed, time / difference);
+
+            time += Time.deltaTime * boostFactor;
 
             if (OnSlope())
             {
@@ -229,10 +271,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveSpeed = desiredMoveSpeed;
+        speedChangeFactor = 1f;
+        keepMomentum = false;
     }
 
     private void MovePlayer()
     {
+        if (state == MovementState.dashing) return;
+
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
@@ -277,6 +323,11 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 limitedVel = flatVel.normalized * moveSpeed;
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
+        }
+
+        if (maxYspeed != 0 && rb.velocity.y > maxYspeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, maxYspeed, rb.velocity.z);
         }
     }
 
