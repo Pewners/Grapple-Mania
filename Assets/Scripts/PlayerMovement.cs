@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed;
     public float groundDrag;
     public float slideSpeed;
+    public float wallrunSpeed;
 
     public float dashSpeed;
     public float dashSpeedChangeFactor;
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         walking,
         sprinting,
         air,
+        wallrunning,
         crouching,
         sliding,
         dashing,
@@ -76,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
     public bool sliding;
 
     public bool dashing;
+
+    public bool wallrunning;
 
     private void Start()
     {
@@ -147,6 +151,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
+        // Mode - Wallrunning
+        if (wallrunning)
+        {
+            state = MovementState.wallrunning;
+            desiredMoveSpeed = wallrunSpeed;
+        }
+
         // Mode - Dashing
         if (dashing)
         {
