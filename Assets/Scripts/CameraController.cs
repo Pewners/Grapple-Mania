@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraController : MonoBehaviour
 {
@@ -42,8 +43,8 @@ public class CameraController : MonoBehaviour
 
     //this is the visual effects I'll do this later -jason
 
-    //public void DoFov(float endValue)
-    //{
-    //    GetComponent<Camera>().fieldOfView = endValue;
-    //}
+    public void DoFov(float endValue)
+    {
+        GetComponent<Camera>().DOFieldOfView(endValue, 0.25f);
+    }
 }
