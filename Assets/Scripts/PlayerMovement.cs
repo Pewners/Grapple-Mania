@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    public MovementState state; 
+    public MovementState state;
 
     public enum MovementState
     {
@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         crouching,
         sliding,
         dashing,
+        freeze,
     }
 
     public bool sliding;
@@ -80,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
     public bool dashing;
 
     public bool wallrunning;
+
+    public bool freeze;
+
+    public bool activeGrapple;
 
     private void Start()
     {
@@ -102,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         // handle drag
-        if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching)
+        if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching && !activeGrapple)
         {
             rb.drag = groundDrag;
         }
@@ -151,6 +156,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
+        // Mode - Freeze
+        if (freeze)
+        {
+            state = MovementState.freeze;
+            moveSpeed = 0;
+            rb.velocity = Vector3.zero;
+        }
+
         // Mode - Wallrunning
         if (wallrunning)
         {
@@ -237,7 +250,7 @@ public class PlayerMovement : MonoBehaviour
             lastState = state;
         }
 
-        if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed !=0)
+        if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed != 0)
         {
             StopAllCoroutines();
             StartCoroutine(SmoothlyLerpMoveSpeed());
@@ -288,6 +301,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        if (activeGrapple) return;
+
         if (state == MovementState.dashing) return;
 
         // calculate movement direction
@@ -316,6 +331,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void SpeedControl()
     {
+        if (activeGrapple) return;
+
         // limiting speed on slope
         if (OnSlope() && !exitingSlope)
         {
@@ -358,6 +375,21 @@ public class PlayerMovement : MonoBehaviour
         exitingSlope = false;
     }
 
+    public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
+    {
+        activeGrapple = true;
+
+        velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+        Invoke(nameof(SetVelocity), 0.1f);
+    }
+
+    private Vector3 velocityToSet;
+
+    private void SetVelocity()
+    {
+        rb.velocity = velocityToSet;
+    }
+
     public bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.4f))
@@ -372,5 +404,17 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 GetSlopeMoveDirection(Vector3 direction)
     {
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
+    }
+
+    public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+    {
+        float gravity = Physics.gravity.y;
+        float displacementY = endPoint.y - startPoint.y;
+        Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
+
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity) + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
+
+        return velocityXZ + velocityY;
     }
 }
