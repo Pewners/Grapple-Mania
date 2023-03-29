@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDrag;
     public float slideSpeed;
     public float wallrunSpeed;
+    public float climbSpeed;
 
     [Header("Dash")]
     public float dashSpeed;
@@ -76,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         sprinting,
         air,
         wallrunning,
+        climbing,
         crouching,
         sliding,
         dashing,
@@ -90,6 +92,8 @@ public class PlayerMovement : MonoBehaviour
     public bool freeze;
 
     public bool activeGrapple;
+
+    public bool climbing;
 
     private void Start()
     {
@@ -174,8 +178,15 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
 
+        // Mode - Climbing
+        if (climbing)
+        {
+            state = MovementState.climbing;
+            desiredMoveSpeed = climbSpeed;
+        }
+
         // Mode - Wallrunning
-        if (wallrunning)
+        else if (wallrunning)
         {
             state = MovementState.wallrunning;
             desiredMoveSpeed = wallrunSpeed;
@@ -190,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Mode - Sliding
-        if (sliding)
+        else if (sliding)
         {
             state = MovementState.sliding;
 

@@ -17,6 +17,14 @@ public class Climbing : MonoBehaviour
 
     private bool climbing;
 
+    [Header("ClimbJumping")]
+    public float climbJumpUpForce;
+    public float climbJumpBackForce;
+
+    public KeyCode jumpKey = KeyCode.Space;
+    public int climbJumps;
+    private int climbJumpsLeft;
+
     [Header("Detection")]
     public float detectionLength;
     public float sphereCastRadius;
@@ -25,6 +33,10 @@ public class Climbing : MonoBehaviour
 
     private RaycastHit frontWallHit;
     private bool wallFront;
+
+    private Transform lastWall;
+    private Vector3 lastWallNormal;
+    public float minWallNormalAngleChange;
 
     private void Update()
     {
@@ -51,6 +63,8 @@ public class Climbing : MonoBehaviour
         {
             if (climbing) StopClimbing();
         }
+
+        //////////////if (wallFront && Input)
     }
 
     private void WallCheck()
@@ -67,6 +81,7 @@ public class Climbing : MonoBehaviour
     private void StartClimbing()
     {
         climbing = true;
+        pm.climbing = true;
 
         // Camera FOV change
     }
@@ -81,8 +96,19 @@ public class Climbing : MonoBehaviour
     private void StopClimbing()
     {
         climbing = false;
+        pm.climbing = false;
 
         // Particle effect
+    }
+
+    private void ClimbJump()
+    {
+        Vector3 forceToApply = transform.up * climbJumpUpForce + frontWallHit.normal * climbJumpBackForce;
+
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(forceToApply, ForceMode.Impulse);
+
+        climbJumpsLeft--;
     }
 
 }
