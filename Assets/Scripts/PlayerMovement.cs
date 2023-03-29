@@ -65,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    private Grappling grape;
+
     public MovementState state;
 
     public enum MovementState
@@ -93,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        grape = GameObject.Find("Grapple").GetComponent<Grappling>();
 
         readyToJump = true;
 

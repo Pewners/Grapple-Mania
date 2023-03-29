@@ -623,7 +623,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.064
+  m_Volume: 0.294
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1293,7 +1293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
-  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1377,18 +1376,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &705507996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705507993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &807096992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1386,6 @@ GameObject:
   m_Component:
   - component: {fileID: 807096994}
   - component: {fileID: 807096995}
-  - component: {fileID: 807096999}
   - component: {fileID: 807096996}
   - component: {fileID: 807096993}
   - component: {fileID: 807096997}
@@ -1567,50 +1553,6 @@ MonoBehaviour:
   gravityCounterForce: 20
   orientation: {fileID: 1417667218}
   cam: {fileID: 963194230}
---- !u!114 &807096999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807096992}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd779556f920f404dbc2c5a94ed2c018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  walkSpeed: 4
-  sprintSpeed: 6
-  swingSpeed: 1
-  groundDrag: 30
-  jumpForce: 7
-  jumpCooldown: 0.25
-  airMultiplier: 0.4
-  readyToJump: 0
-  crouchSpeed: 3.5
-  crouchYScale: 0.5
-  startYScale: 0
-  jumpKey: 32
-  sprintKey: 304
-  crouchKey: 99
-  playerHeight: 1
-  whatIsGround:
-    m_Bits: 192
-  grounded: 0
-  maxSlopeAngle: 90
-  exitingSlope: 0
-  orientation: {fileID: 1417667218}
-  horizontalInput: 0
-  verticalInput: 0
-  moveDirection: {x: 0, y: 0, z: 0}
-  rb: {fileID: 0}
-  state: 0
-  freeze: 0
-  activeGrapple: 0
-  swinging: 0
-  enableMovementOnNextTouch: 0
-  velocityToSet: {x: 0, y: 0, z: 0}
 --- !u!1 &813920387
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,7 +3941,7 @@ MonoBehaviour:
   maxGrappleDistance: 25
   grappleDelayTime: 0.25
   overshootYAxis: 2
-  grapplingCd: 1
+  grapplingCd: 0.2
   freeze: 0
   rb: {fileID: 807096995}
   grappleKey: 324

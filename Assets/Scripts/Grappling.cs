@@ -31,7 +31,7 @@ public class Grappling : MonoBehaviour
 
     public void Start()
     {
-        pm = GetComponent<PlayerMovement>();
+        pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -96,9 +96,9 @@ public class Grappling : MonoBehaviour
         Invoke(nameof(StopGrapple), 1f);
     }
 
-    private void StopGrapple()
+    public void StopGrapple()
     {
-       // pm.freeze = false;
+        //pm.freeze = false;
 
         grappling = false;
 
