@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.25330013, g: 0.21698801, b: 0.23319203, a: 1}
+  m_IndirectSpecularColor: {r: 0.25330186, g: 0.21698852, b: 0.2331926, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1390,6 +1390,7 @@ GameObject:
   - component: {fileID: 807096993}
   - component: {fileID: 807096997}
   - component: {fileID: 807096998}
+  - component: {fileID: 807096999}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1486,6 +1487,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  grounded: 0
   maxSlopeAngle: 90
   orientation: {fileID: 1417667218}
   state: 0
@@ -1553,6 +1555,30 @@ MonoBehaviour:
   gravityCounterForce: 20
   orientation: {fileID: 1417667218}
   cam: {fileID: 963194230}
+--- !u!114 &807096999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807096992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae334aec9cabfa4693062481a7b505b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 1417667218}
+  rb: {fileID: 807096995}
+  pm: {fileID: 807096996}
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 128
+  climbSpeed: 0
+  maxClimbTime: 0
+  climbTimer: 0
+  detectionLength: 0
+  sphereCastRadius: 0
+  maxWallLookAngle: 0
 --- !u!1 &813920387
 GameObject:
   m_ObjectHideFlags: 0
