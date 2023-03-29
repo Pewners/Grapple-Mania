@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float slideSpeed;
     public float wallrunSpeed;
 
+    [Header("Dash")]
     public float dashSpeed;
     public float dashSpeedChangeFactor;
 
@@ -21,9 +22,11 @@ public class PlayerMovement : MonoBehaviour
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
 
+    [Header("Slope")]
     public float speedIncreaseMultiplier;
     public float slopeIncreaseMultiplier;
 
+    [Header("Jump")]
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
@@ -66,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     public enum MovementState
     {
+        freeze,
         walking,
         sprinting,
         air,
@@ -73,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
         crouching,
         sliding,
         dashing,
-        freeze,
     }
 
     public bool sliding;
@@ -107,7 +110,11 @@ public class PlayerMovement : MonoBehaviour
 
 
         // handle drag
-        if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching && !activeGrapple)
+        if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching)
+        {
+            rb.drag = groundDrag;
+        }
+        if (grounded && !activeGrapple)
         {
             rb.drag = groundDrag;
         }
@@ -156,7 +163,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        // Mode - Freeze
         if (freeze)
         {
             state = MovementState.freeze;
@@ -375,19 +381,39 @@ public class PlayerMovement : MonoBehaviour
         exitingSlope = false;
     }
 
+    private bool enableMovementOnNextTouch;
     public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
     {
         activeGrapple = true;
 
         velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
         Invoke(nameof(SetVelocity), 0.1f);
+
+        Invoke(nameof(ResetRestrictions), 3f);
     }
 
     private Vector3 velocityToSet;
 
     private void SetVelocity()
     {
+        enableMovementOnNextTouch = true;
         rb.velocity = velocityToSet;
+    }
+
+    public void ResetRestrictions()
+    {
+        activeGrapple = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (enableMovementOnNextTouch)
+        {
+            enableMovementOnNextTouch = false;
+            ResetRestrictions();
+
+            //GetComponent<Grappling>().StopGrapple();
+        }
     }
 
     public bool OnSlope()
@@ -413,7 +439,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
 
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
-        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity) + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)
+            + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
 
         return velocityXZ + velocityY;
     }

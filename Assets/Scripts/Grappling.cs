@@ -21,23 +21,31 @@ public class Grappling : MonoBehaviour
     [Header("Cooldown")]
     public float grapplingCd;
     private float grapplingCdTimer;
+    public bool freeze;
+    public Rigidbody rb;
 
     [Header("Input")]
     public KeyCode grappleKey = KeyCode.Mouse1;
 
     private bool grappling;
 
-    private void Start()
+    public void Start()
     {
         pm = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(grappleKey)) StartGrapple();
+        if (Input.GetKeyDown(grappleKey)) 
+            StartGrapple();
 
         if (grapplingCdTimer > 0)
             grapplingCdTimer -= Time.deltaTime;
+
+        if (freeze)
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     private void LateUpdate()
@@ -52,7 +60,7 @@ public class Grappling : MonoBehaviour
 
         grappling = true;
 
-        pm.freeze = true;
+        //pm.freeze = true;
 
         RaycastHit hit;
         if(Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
@@ -72,9 +80,9 @@ public class Grappling : MonoBehaviour
         lr.SetPosition(1, grapplePoint);
     }
 
-    private void ExecuteGrapple ()
+    private void ExecuteGrapple()
     {
-        pm.freeze = false;
+        //pm.freeze = false;
 
         Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
 
@@ -90,11 +98,12 @@ public class Grappling : MonoBehaviour
 
     private void StopGrapple()
     {
-        pm.freeze = false;
+       // pm.freeze = false;
 
         grappling = false;
 
         grapplingCdTimer = grapplingCd;
+
         lr.enabled = false;
     }
 }

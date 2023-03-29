@@ -42,8 +42,6 @@ public class CameraController : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
-    //this is the visual effects I'll do this later -jason
-
     public void DoFov(float endValue)
     {
         GetComponent<Camera>().DOFieldOfView(endValue, 0.25f);
