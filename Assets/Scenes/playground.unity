@@ -343,20 +343,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f43f78f15bcaa408010dfc0eef6181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  walkSpeed: 0
+  sprintSpeed: 0
   groundDrag: 0
+  slideSpeed: 0
+  wallrunSpeed: 0
+  climbSpeed: 0
+  dashSpeed: 0
+  dashSpeedChangeFactor: 0
+  maxYspeed: 0
+  speedIncreaseMultiplier: 0
+  slopeIncreaseMultiplier: 0
   jumpForce: 0
   jumpCooldown: 0
   airMultiplier: 0
-  walkSpeed: 0
-  sprintSpeed: 0
+  crouchSpeed: 0
+  crouchYScale: 0
   jumpKey: 32
+  sprintKey: 304
+  crouchKey: 306
+  playerHeight: 0
   groundCheck: {fileID: 0}
   groundDistance: 1
   ground:
     serializedVersion: 2
     m_Bits: 128
+  grounded: 0
+  maxSlopeAngle: 0
   orientation: {fileID: 0}
+  state: 0
+  sliding: 0
+  dashing: 0
+  wallrunning: 0
+  freeze: 0
+  activeGrapple: 0
+  climbing: 0
 --- !u!4 &311276218
 Transform:
   m_ObjectHideFlags: 0
@@ -407,7 +428,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
