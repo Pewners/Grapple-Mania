@@ -1,0 +1,35 @@
+# Blender MTL File: 'Caixinha .blend'
+# Material Count: 3
+
+newmtl Embalagem
+Ns 488.008242
+Ka 0.063636 0.063636 0.063636
+Kd 0.036357 0.246101 0.667658
+Ks 0.286364 0.286364 0.286364
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd Caixinha UV.psd
+
+newmtl Material
+Ns 589.165272
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.459091 0.459091 0.459091
+Ke 0.0 0.0 0.0
+Ni 1.460000
+d 0.495455
+illum 9
+map_Kd Listras.psd
+
+newmtl Material.002
+Ns 50.280997
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.086364 0.086364 0.086364
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Caixinha UV.psd
