@@ -12048,7 +12048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa542ce8ee9f0a949b16c7a5f7856136, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.495
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa542ce8ee9f0a949b16c7a5f7856136, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13204,7 +13204,7 @@ MonoBehaviour:
   damage: 20
   timeBetweenShooting: 0.1
   spread: 0.06
-  range: 0
+  range: 100
   reloadTime: 0.5
   timeBetweenShots: 0
   magazineSize: 24
@@ -23601,7 +23601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010514435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -599.792, y: -212.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1433745846}
