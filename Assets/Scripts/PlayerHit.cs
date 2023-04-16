@@ -18,8 +18,13 @@ public class PlayerHit : MonoBehaviour
     {
         if (CollisionInfo.gameObject.tag == "Bullet")
         {
-            hits = hits - 1;
+            TakeDamage();
         }
+    }
+
+    public void TakeDamage ()
+    {
+        hits = hits - 1;
     }
 
     private void Update()

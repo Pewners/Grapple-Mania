@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 428857047271856028}
   - component: {fileID: 428857047271856031}
   - component: {fileID: 428857047271856030}
+  - component: {fileID: 6335962446111664648}
   - component: {fileID: 428857047271856001}
   m_Layer: 0
   m_Name: Gun
@@ -378,7 +379,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &428857047271856001
+--- !u!114 &6335962446111664648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -386,6 +387,37 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428857047271856003}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906ba341f66d45a4b9e3cb114c83535b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  timeBetweenShooting: 0.1
+  spread: 0.06
+  range: 0
+  reloadTime: 0.5
+  timeBetweenShots: 0
+  magazineSize: 24
+  bulletsPerTap: 6
+  allowButtonHold: 0
+  fpsCam: {fileID: 428857047894738301}
+  attackPoint: {fileID: 428857046377011276}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 8
+  muzzleFlash: {fileID: 0}
+  bulletHoleGraphic: {fileID: 8142239773206444647, guid: fc23808b8c207804aa984d9774cec801, type: 3}
+  camShakeMagnitude: 0
+  camShakeDuration: 0
+  text: {fileID: 0}
+--- !u!114 &428857047271856001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428857047271856003}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afcb41876cc4eef4b8f7dbcfc52f70a5, type: 3}
   m_Name: 
@@ -461,6 +493,7 @@ GameObject:
   - component: {fileID: 428857047894738301}
   - component: {fileID: 428857047894738300}
   - component: {fileID: 428857047894738296}
+  - component: {fileID: 3638621257489706047}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -551,3 +584,36 @@ MonoBehaviour:
   sensY: 1000
   orientation: {fileID: 0}
   camHolder: {fileID: 428857047291652480}
+--- !u!114 &3638621257489706047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428857047894738303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
