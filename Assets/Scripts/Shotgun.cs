@@ -42,9 +42,12 @@ public class Shotgun : MonoBehaviour
 
         if (Input.GetKeyDown(reloadKey) && bulletsLeft < magazineSize && !reloading) Reload();
 
+        //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        {
             bulletsShot = bulletsPerTap;
             Shoot();
+        }
     }
     private void Shoot()
     {
