@@ -22,6 +22,9 @@ public class Shotgun : MonoBehaviour
     public KeyCode shootKey = KeyCode.Mouse0;
     public KeyCode reloadKey = KeyCode.R;
 
+    public AudioClip shotgun;
+    public AudioSource hehe;
+
     private void Awake()
     {
         bulletsLeft = magazineSize;
@@ -67,6 +70,7 @@ public class Shotgun : MonoBehaviour
         }
 
         Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
+        hehe.PlayOneShot(shotgun);
 
         bulletsLeft--;
         bulletsShot--;
