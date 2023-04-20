@@ -38,24 +38,38 @@ public class Climbing : MonoBehaviour
     private Vector3 lastWallNormal;
     public float minWallNormalAngleChange;
 
+    [Header("Exiting")]
+    public bool exitingWall;
+    public float exitWallTime;
+    private float exitWallTimer;
+
     private void Update()
     {
         WallCheck();
         StateMachine();
 
-        if (climbing) ClimbingMovement();
+        if (climbing && !exitingWall) ClimbingMovement();
     }
 
     private void StateMachine()
     {
         // State 1 - Climbing
-        if (wallFront && Input.GetKey(KeyCode.W) && wallLookAngle < maxWallLookAngle)
+        if (wallFront && Input.GetKey(KeyCode.W) && wallLookAngle < maxWallLookAngle && !exitingWall)
         {
             if (!climbing && climbTimer > 0) StartClimbing();
 
             // Timer
             if (climbTimer > 0) climbTimer -= Time.deltaTime;
             if (climbTimer < 0) StopClimbing();
+        }
+
+        // State 2 - Exiting
+        else if (exitingWall)
+        {
+            if (climbing) StopClimbing();
+
+            if (exitWallTimer > 0) exitWallTimer -= Time.deltaTime;
+            if (exitWallTimer < 0) exitingWall = false;
         }
 
         // State 3 - None
@@ -109,6 +123,9 @@ public class Climbing : MonoBehaviour
 
     private void ClimbJump()
     {
+        exitingWall = true;
+        exitWallTimer = exitWallTime;
+
         Vector3 forceToApply = transform.up * climbJumpUpForce + frontWallHit.normal * climbJumpBackForce;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
