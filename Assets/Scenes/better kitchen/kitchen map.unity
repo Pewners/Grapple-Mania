@@ -38627,6 +38627,8 @@ MonoBehaviour:
   sphereCastRadius: 0.25
   maxWallLookAngle: 30
   minWallNormalAngleChange: 5
+  exitingWall: 0
+  exitWallTime: 0
 --- !u!199 &3829580805972774919
 ParticleSystemRenderer:
   serializedVersion: 6
