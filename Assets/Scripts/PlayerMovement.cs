@@ -56,6 +56,9 @@ public class PlayerMovement : MonoBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
+    [Header("References")]
+
+
     public Transform orientation;
 
     float horizontalInput;
