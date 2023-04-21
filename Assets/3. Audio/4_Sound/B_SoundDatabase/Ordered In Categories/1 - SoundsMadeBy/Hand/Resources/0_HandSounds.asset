@@ -1,0 +1,784 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 0_HandSounds
+  m_EditorClassIdentifier: Assembly-CSharp::SoundCategory
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: a632d96d3e85d4e45a60316212a9e8c1, type: 3}
+    - {fileID: 8300000, guid: e25e1f233e5721248923710908401c0f, type: 3}
+    - {fileID: 8300000, guid: e899a6002c1e6d548aaadc70af31cb09, type: 3}
+    - {fileID: 8300000, guid: d7ebd21074cfe29498c4e702ad6c10f8, type: 3}
+    - {fileID: 8300000, guid: 9f7981f4e3a42fb4c80532f8d2e42acf, type: 3}
+    - {fileID: 8300000, guid: 4b49ade8ad3553c48939f1fdf16ea6d3, type: 3}
+    - {fileID: 8300000, guid: f7a8aa0c418e87140babe0c913eddf98, type: 3}
+    - {fileID: 8300000, guid: 8aa6b5d074996694eadf5888be2175bb, type: 3}
+    - {fileID: 8300000, guid: d3e3e53cb30350c44b78b21a6c095f59, type: 3}
+    - {fileID: 8300000, guid: 43a935b9c23c6b449879fd19bb386a55, type: 3}
+    - {fileID: 8300000, guid: bff65ea073063344cbff7b037d3764dc, type: 3}
+    - {fileID: 8300000, guid: f8160b55fe929f74d8b9dfa6b0c02f14, type: 3}
+    - {fileID: 8300000, guid: eb3c801a2ecc8f548bfde7b813a7eb09, type: 3}
+    - {fileID: 8300000, guid: 0d151bd5207d4704793d29479c14ca51, type: 3}
+    - {fileID: 8300000, guid: 858b71882dbc38648af8d9df6b75cacc, type: 3}
+    - {fileID: 8300000, guid: 44f3bd0dbb058734698c0b4549f76401, type: 3}
+    - {fileID: 8300000, guid: 2f83341045098b045bf9079bfabbf31f, type: 3}
+    - {fileID: 8300000, guid: 925e2a907e4e6c84a9c89532881dece0, type: 3}
+    - {fileID: 8300000, guid: d981376b1969f9244a691a80385ca804, type: 3}
+    - {fileID: 8300000, guid: 1f474411ed7c8ef4e8936442ec61ca31, type: 3}
+    - {fileID: 8300000, guid: f53d58d611863e643884257bbd525d7a, type: 3}
+    - {fileID: 8300000, guid: eee4e7dc498482d41b43a170c5199ed0, type: 3}
+    - {fileID: 8300000, guid: 99caf0b7229d74e4a8fe8e1554d2b9b4, type: 3}
+    - {fileID: 8300000, guid: 27fc0ee6080279a45984d36de879de47, type: 3}
+    - {fileID: 8300000, guid: 22c1ad16524389a49918f8d30b3bcb84, type: 3}
+    - {fileID: 8300000, guid: 44a339bb47791a34095c2ff56b8ba558, type: 3}
+    - {fileID: 8300000, guid: a67ddea87ded7524b9c7dfa193c04b8c, type: 3}
+    - {fileID: 8300000, guid: 383fce62d65f7074b84ec1dc0d0472a8, type: 3}
+    - {fileID: 8300000, guid: 7391e16575cc9804694a7b70706823d5, type: 3}
+    - {fileID: 8300000, guid: 5f5dc1a70b59b484fb74aa65f798021e, type: 3}
+    - {fileID: 8300000, guid: 8499f2e349786824997e4896abf5bf34, type: 3}
+    - {fileID: 8300000, guid: 366db6d303100c6488c91fea82405181, type: 3}
+    - {fileID: 8300000, guid: 49cf0bc33dba9e443b10969cf672089c, type: 3}
+    - {fileID: 8300000, guid: 2867d2f1426a435419f2af28cb7c82c6, type: 3}
+    - {fileID: 8300000, guid: e4ff7c2b0396b1843b6ff1712e8dc6ae, type: 3}
+    - {fileID: 8300000, guid: 1d32250436d42a145a7a029701f6d07e, type: 3}
+    - {fileID: 8300000, guid: a29ebcde9d3d61c46ba92fcb5ce6db26, type: 3}
+    - {fileID: 8300000, guid: 767e2914b8010d44fbc79312aca7ca50, type: 3}
+    - {fileID: 8300000, guid: 67c0a64b7124eb246a1eae852635a854, type: 3}
+    - {fileID: 8300000, guid: 936c07cde9b22e948845caa867c8e923, type: 3}
+    - {fileID: 8300000, guid: df42a916041acce44b1b41b482ab2161, type: 3}
+    - {fileID: 8300000, guid: ee6c9268ad486d64cb11cc541354786b, type: 3}
+    - {fileID: 8300000, guid: b002bde3900f72a4abd96e36b029e0da, type: 3}
+    - {fileID: 8300000, guid: 4ad4232d524bd9f41b236514cdd1c534, type: 3}
+    - {fileID: 8300000, guid: 3900d3533f393a847929824c2de42fa6, type: 3}
+    - {fileID: 8300000, guid: e052b60356c12e6458e2b0054b858421, type: 3}
+    - {fileID: 8300000, guid: a69de4b02338f7a4fa76a60c0e919fcc, type: 3}
+    - {fileID: 8300000, guid: 11a9fed2e8655754d8a405da0184511c, type: 3}
+    - {fileID: 8300000, guid: 8725d079f634a574e9b1c897fb835daf, type: 3}
+    - {fileID: 8300000, guid: 1a9a6ce2a861c4345a4321e0dc8f87ce, type: 3}
+    - {fileID: 8300000, guid: d004eb9d2a9a1f547a6e5b9301c3ea7f, type: 3}
+    - {fileID: 8300000, guid: 04784f0c091fce342b6d0a9c9c27c88b, type: 3}
+    - {fileID: 8300000, guid: 16917049d7d1c0243913913966d5a03e, type: 3}
+    - {fileID: 8300000, guid: b17ac29f97c4c314799e265dfddefaa3, type: 3}
+    - {fileID: 8300000, guid: 82fe161f118462b448a1b7abf9185dfc, type: 3}
+    - {fileID: 8300000, guid: bf5dd4998b3640044affdc4922ba2f8d, type: 3}
+    - {fileID: 8300000, guid: 5e8371f1cd5050f4884db57334fb54ad, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: audioClipLookup
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 57
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Arm Swing, Whoosh 3
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Arm Swing, Whoosh 5
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Arm Swing, Whoosh 6
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Arm Swing, Whoosh 27
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Block 1
+    - Name: $v
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Block 2
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Block 3
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Body Fall 7
+    - Name: $v
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Body Fall 8
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Body Fall 9
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Earth Punch 3
+    - Name: $v
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Earth Punch 4
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Fire Punch 1
+    - Name: $v
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Fire Punch 3
+    - Name: $v
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Fire Punch 5
+    - Name: $v
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Frost Punch 2
+    - Name: $v
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Frost Punch 4
+    - Name: $v
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Kick 2
+    - Name: $v
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Kick 3
+    - Name: $v
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Kick 4
+    - Name: $v
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Kick 5
+    - Name: $v
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Punch (2)
+    - Name: $v
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Punch (7)
+    - Name: $v
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Punch (17)
+    - Name: $v
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Game Punch 21
+    - Name: $v
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Game Kick 4
+    - Name: $v
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Game Punch 3
+    - Name: $v
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Game Punch 4
+    - Name: $v
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Game Punch 5
+    - Name: $v
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Game Punch 14
+    - Name: $v
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy punch 13
+    - Name: $v
+      Entry: 10
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy punch 14
+    - Name: $v
+      Entry: 10
+      Data: 31
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy punch 15
+    - Name: $v
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Realistic Kick 4
+    - Name: $v
+      Entry: 10
+      Data: 33
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Realistic Kick 5
+    - Name: $v
+      Entry: 10
+      Data: 34
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Realistic Punch 10
+    - Name: $v
+      Entry: 10
+      Data: 35
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Heavy Realistic Punch 18
+    - Name: $v
+      Entry: 10
+      Data: 36
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Kick 1
+    - Name: $v
+      Entry: 10
+      Data: 37
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Kick 2
+    - Name: $v
+      Entry: 10
+      Data: 38
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Kick 3
+    - Name: $v
+      Entry: 10
+      Data: 39
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Kick 16
+    - Name: $v
+      Entry: 10
+      Data: 40
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Kick 17
+    - Name: $v
+      Entry: 10
+      Data: 41
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Laser Punch 1
+    - Name: $v
+      Entry: 10
+      Data: 42
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Laser Punch 4
+    - Name: $v
+      Entry: 10
+      Data: 43
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Shadow Punch 1
+    - Name: $v
+      Entry: 10
+      Data: 44
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Shadow Punch 2
+    - Name: $v
+      Entry: 10
+      Data: 45
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Shadow Punch 4
+    - Name: $v
+      Entry: 10
+      Data: 46
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Shadow Punch 5
+    - Name: $v
+      Entry: 10
+      Data: 47
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Slap 2
+    - Name: $v
+      Entry: 10
+      Data: 48
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Throwing Knife (Thrown) 1
+    - Name: $v
+      Entry: 10
+      Data: 49
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Throwing Knife (Thrown) 2
+    - Name: $v
+      Entry: 10
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Throwing Knife (Thrown) 3
+    - Name: $v
+      Entry: 10
+      Data: 51
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Throwing Knife (Thrown) 11
+    - Name: $v
+      Entry: 10
+      Data: 52
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Throwing Knife (Thrown) 12
+    - Name: $v
+      Entry: 10
+      Data: 53
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Water Punch 1
+    - Name: $v
+      Entry: 10
+      Data: 54
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Water Punch 2
+    - Name: $v
+      Entry: 10
+      Data: 55
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Water Punch 3
+    - Name: $v
+      Entry: 10
+      Data: 56
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
