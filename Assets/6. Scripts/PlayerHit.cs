@@ -29,7 +29,7 @@ public class PlayerHit : MonoBehaviour
 
     private void Update()
     {
-        if (hits == 0)
+        if (hits <= 0)
         {
             Destroy(gameObject);
             explosion.SetActive(true);
