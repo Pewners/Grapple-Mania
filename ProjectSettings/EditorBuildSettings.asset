@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/0. Scenes/menu/menu.unity
-    guid: 960d49200cb54cf4bb0647815807f472
-  - enabled: 1
-    path: Assets/0. Scenes/better kitchen/kitchen map.unity
+    path: Assets/0. Scenes/kitchen/kitchen map.unity
     guid: 0ae8216721926714cb6958e31a1479c5
   m_configObjects: {}
