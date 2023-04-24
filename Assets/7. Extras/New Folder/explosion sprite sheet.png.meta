@@ -129,6 +129,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -721,6 +722,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      explosion sprite sheet_12: 6032818104568672448
+      explosion sprite sheet_2: -4221486363156228854
+      explosion sprite sheet_15: 2388242344529928007
+      explosion sprite sheet_23: 2384100116235403128
+      explosion sprite sheet_6: -3685210296677763898
+      explosion sprite sheet_8: -3571679057166193781
+      explosion sprite sheet_22: 5302742728884747878
+      explosion sprite sheet_11: 1455606627741861086
+      explosion sprite sheet_10: 8301877475615204162
+      explosion sprite sheet_20: -6375864030598379244
+      explosion sprite sheet_13: -4924033726561560790
+      explosion sprite sheet_0: 5053203729542167781
+      explosion sprite sheet_5: -3334941602266699180
+      explosion sprite sheet_17: -4616351459740887676
+      explosion sprite sheet_3: -3797473012382452475
+      explosion sprite sheet_7: -893038854988717351
+      explosion sprite sheet_4: -4608035618681958394
+      explosion sprite sheet_18: -3946244898842740445
+      explosion sprite sheet_19: 479688724083416149
+      explosion sprite sheet_16: 3869638123039579278
+      explosion sprite sheet_21: -7006746614258400114
+      explosion sprite sheet_9: 6361144428871109575
+      explosion sprite sheet_1: -1731028811712859820
+      explosion sprite sheet_14: -144494482780383205
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
