@@ -5,7 +5,7 @@ using UnityEngine;
 public class Grappling : MonoBehaviour
 {
     [Header("References")]
-    private PlayerMovement pm;
+    private PlayerMovementlol pm;
     public Transform cam;
     public Transform gunTip;
     public LayerMask whatIsGrappleable;
@@ -31,7 +31,7 @@ public class Grappling : MonoBehaviour
 
     public void Start()
     {
-        pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        pm = GameObject.Find("Player").GetComponent<PlayerMovementlol>();
     }
 
     private void Update()

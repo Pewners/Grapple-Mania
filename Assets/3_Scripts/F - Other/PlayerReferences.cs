@@ -23,7 +23,7 @@ public class PlayerReferences : MonoBehaviour
     // movement
     public MovementCore movementCore;
     public Detector detector;
-    public PlayerMovement movement;
+    public PlayerMovementlol movement;
     public PlayerCam_MLab cam;
     public Dashing_MLab dashing;
     public WallRunning_MLab wallRunning;
